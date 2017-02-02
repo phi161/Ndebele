@@ -14,11 +14,8 @@ final class MainViewController: UIViewController {
     @IBOutlet weak var refreshButton: UIBarButtonItem!
     let RateTableViewCellIdentifier = "RateTableViewCellIdentifier"
 
-    var rates = [
-        Rate(currencyId: 42, name: "EUR/USD", buyPrice: 1.06404, sellPrice: 1.06382, pipMultiplier: 10000),
-        Rate(currencyId: 150, name: "USD/CNH", buyPrice: 6.8362, sellPrice: 6.8316, pipMultiplier: 1000),
-        Rate(currencyId: 62, name: "NZD/CHF", buyPrice: 0.72386, sellPrice: 0.72204, pipMultiplier: 10000),
-    ]
+    var previousRates: [Rate] = []
+    var rates: [Rate] = []
 
     // MARK: - View Lifecycle
 
@@ -26,7 +23,7 @@ final class MainViewController: UIViewController {
         super.viewDidLoad()
 
         self.title = NSLocalizedString("MAIN_TITLE", comment: "The title of the main view")
-        tableView.rowHeight = 100.0
+        tableView.rowHeight = 120.0
         tableView.register(UINib.init(nibName: "RateTableViewCell", bundle: nil), forCellReuseIdentifier: RateTableViewCellIdentifier)
     }
 
@@ -35,6 +32,7 @@ final class MainViewController: UIViewController {
     @IBAction func refreshButtonTapped(_: Any) {
         let service = NdebeleWebService()
         service.rates { rates in
+            self.previousRates = self.rates
             self.rates = rates
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -58,7 +56,12 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if let cell = cell as? RateTableViewCell {
-            cell.populate(rate: rates[indexPath.row])
+            if previousRates.isEmpty {
+                cell.populate(rate: rates[indexPath.row])
+            } else {
+                // TODO: It will be safer to fetch the previous rate based on the currencyId instead of the indexPath
+                cell.populate(rate: rates[indexPath.row], previous: previousRates[indexPath.row])
+            }
         }
     }
 }
