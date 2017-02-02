@@ -14,10 +14,10 @@ final class MainViewController: UIViewController {
     @IBOutlet weak var refreshButton: UIBarButtonItem!
     let RateTableViewCellIdentifier = "RateTableViewCellIdentifier"
 
-    let rates = [
+    var rates = [
         Rate(currencyId: 42, name: "EUR/USD", buyPrice: 1.06404, sellPrice: 1.06382, pipMultiplier: 10000),
         Rate(currencyId: 150, name: "USD/CNH", buyPrice: 6.8362, sellPrice: 6.8316, pipMultiplier: 1000),
-        Rate(currencyId: 62, name: "NZD/CHF", buyPrice: 0.72386, sellPrice: 0.72204, pipMultiplier: 10000)
+        Rate(currencyId: 62, name: "NZD/CHF", buyPrice: 0.72386, sellPrice: 0.72204, pipMultiplier: 10000),
     ]
 
     // MARK: - View Lifecycle
@@ -33,7 +33,13 @@ final class MainViewController: UIViewController {
     // MARK: - Actions
 
     @IBAction func refreshButtonTapped(_: Any) {
-        tableView.reloadData()
+        let service = NdebeleWebService()
+        service.rates { rates in
+            self.rates = rates
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
 }
 
