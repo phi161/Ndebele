@@ -22,4 +22,8 @@ extension RateTableViewCell {
         sellLabel.text = String(sellPrice)
         spreadLabel.text = String(spread)
     }
+
+    func populate(rate: Rate) {
+        populate(name: rate.name, buyPrice: rate.buyPrice, sellPrice: rate.sellPrice, spread: rate.spread)
+    }
 }
