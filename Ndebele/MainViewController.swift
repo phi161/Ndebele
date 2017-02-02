@@ -12,6 +12,7 @@ final class MainViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var refreshButton: UIBarButtonItem!
+    let RateTableViewCellIdentifier = "RateTableViewCellIdentifier"
 
     // MARK: - View Lifecycle
 
@@ -19,6 +20,8 @@ final class MainViewController: UIViewController {
         super.viewDidLoad()
 
         self.title = NSLocalizedString("MAIN_TITLE", comment: "The title of the main view")
+        tableView.rowHeight = 100.0
+        tableView.register(UINib.init(nibName: "RateTableViewCell", bundle: nil), forCellReuseIdentifier: RateTableViewCellIdentifier)
     }
 
     // MARK: - Actions
@@ -34,12 +37,16 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 10
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
-        cell.textLabel?.text = "row \(indexPath.row)"
-        return cell
+        return tableView.dequeueReusableCell(withIdentifier: RateTableViewCellIdentifier, for: indexPath)
+    }
+
+    func tableView(_: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if let cell = cell as? RateTableViewCell {
+            cell.populate(name: "name \(indexPath.row)", buyPrice: 0.42, sellPrice: 0.43, spread: 0.44)
+        }
     }
 }
