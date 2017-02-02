@@ -34,8 +34,8 @@ struct Rate {
 
         // Use NSString since it provides all the charAt related functionality
         // and we don't need String's unicode support
-        let string = String(value) as NSString
-        
+        let string = value.fixedFraction(digits: 5) as NSString
+
         guard let integerPart = string.components(separatedBy: ".").first else {
             return NSAttributedString(string: "")
         }
@@ -55,5 +55,24 @@ struct Rate {
         mutableAttributedString.setAttributes([NSFontAttributeName: UIFont.systemFont(ofSize: 18), NSForegroundColorAttributeName: UIColor.green], range: fractionalPipRange)
 
         return mutableAttributedString
+    }
+}
+
+extension Rate {
+    init?(dictionary: [String: Any]) {
+        guard let currencyId = dictionary["currencyId"] as? Int,
+            let name = dictionary["name"] as? String,
+            let buyPrice = dictionary["buy"] as? Double,
+            let sellPrice = dictionary["sell"] as? Double,
+            let pipMultiplier = dictionary["pipMultiplier"] as? Int
+        else {
+            return nil
+        }
+
+        self.currencyId = currencyId
+        self.name = name
+        self.buyPrice = buyPrice
+        self.sellPrice = sellPrice
+        self.pipMultiplier = pipMultiplier
     }
 }
