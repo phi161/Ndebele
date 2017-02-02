@@ -50,9 +50,9 @@ struct Rate {
 
         let mutableAttributedString = NSMutableAttributedString(string: trimmed, attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 20)])
 
-        mutableAttributedString.setAttributes([NSFontAttributeName: UIFont.systemFont(ofSize: 20), NSForegroundColorAttributeName: UIColor.red], range: leftRange)
-        mutableAttributedString.setAttributes([NSFontAttributeName: UIFont.boldSystemFont(ofSize: 24), NSForegroundColorAttributeName: UIColor.blue], range: highlightedRange)
-        mutableAttributedString.setAttributes([NSFontAttributeName: UIFont.systemFont(ofSize: 18), NSForegroundColorAttributeName: UIColor.green], range: fractionalPipRange)
+        mutableAttributedString.setAttributes([NSFontAttributeName: UIFont.systemFont(ofSize: 20), NSForegroundColorAttributeName: UIColor.darkGray], range: leftRange)
+        mutableAttributedString.setAttributes([NSFontAttributeName: UIFont.boldSystemFont(ofSize: 24), NSForegroundColorAttributeName: UIColor.black], range: highlightedRange)
+        mutableAttributedString.setAttributes([NSFontAttributeName: UIFont.systemFont(ofSize: 18), NSForegroundColorAttributeName: UIColor.darkGray], range: fractionalPipRange)
 
         return mutableAttributedString
     }

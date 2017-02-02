@@ -23,7 +23,7 @@ final class MainViewController: UIViewController {
         super.viewDidLoad()
 
         self.title = NSLocalizedString("MAIN_TITLE", comment: "The title of the main view")
-        tableView.rowHeight = 100.0
+        tableView.rowHeight = 120.0
         tableView.register(UINib.init(nibName: "RateTableViewCell", bundle: nil), forCellReuseIdentifier: RateTableViewCellIdentifier)
     }
 
@@ -56,7 +56,11 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if let cell = cell as? RateTableViewCell {
-            cell.populate(rate: rates[indexPath.row])
+            if previousRates.isEmpty {
+                cell.populate(rate: rates[indexPath.row])
+            } else {
+                cell.populate(rate: rates[indexPath.row], previous: previousRates[indexPath.row])
+            }
         }
     }
 }
