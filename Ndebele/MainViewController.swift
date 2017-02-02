@@ -14,6 +14,12 @@ final class MainViewController: UIViewController {
     @IBOutlet weak var refreshButton: UIBarButtonItem!
     let RateTableViewCellIdentifier = "RateTableViewCellIdentifier"
 
+    let rates = [
+        Rate(currencyId: 42, name: "EUR/USD", buyPrice: 1.06404, sellPrice: 1.06382, pipMultiplier: 10000),
+        Rate(currencyId: 150, name: "USD/CNH", buyPrice: 6.8362, sellPrice: 6.8316, pipMultiplier: 1000),
+        Rate(currencyId: 62, name: "NZD/CHF", buyPrice: 0.72386, sellPrice: 0.72204, pipMultiplier: 10000)
+    ]
+
     // MARK: - View Lifecycle
 
     override func viewDidLoad() {
@@ -37,7 +43,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return rates.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -46,7 +52,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if let cell = cell as? RateTableViewCell {
-            cell.populate(name: "name \(indexPath.row)", buyPrice: 0.42, sellPrice: 0.43, spread: 0.44)
+            cell.populate(rate: rates[indexPath.row])
         }
     }
 }
