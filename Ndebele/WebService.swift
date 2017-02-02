@@ -11,18 +11,41 @@ import Foundation
 final class NdebeleWebService {
 
     func rates(completion: @escaping ([Rate]) -> Void) {
-        URLSession.shared.dataTask(with: URL(string: "http://localhost:4567/pip")!) { data, _, _ in
-            var rates: [Rate] = []
 
-            if let data = data,
-                let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [[String: Any]] {
-                for rate in json! {
-                    if let r = Rate(dictionary: rate) {
-                        rates.append(r)
+        let endpoint = "http://localhost/api/rates"
+
+        guard let endpointURL = URL(string: endpoint) else {
+            return
+        }
+
+        let json = ["includeMultiplier": true]
+
+        do {
+            let data = try JSONSerialization.data(withJSONObject: json, options: [])
+
+            var request = URLRequest(url: endpointURL)
+            request.httpMethod = "POST"
+            request.httpBody = data
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.addValue("application/json", forHTTPHeaderField: "Accept")
+
+            let task = URLSession.shared.dataTask(with: request, completionHandler: { data, _, _ in
+                var rates: [Rate] = []
+
+                if let data = data,
+                    let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [[String: Any]] {
+                    for rateJSON in json! {
+                        if let rate = Rate(dictionary: rateJSON) {
+                            rates.append(rate)
+                        }
                     }
+                    completion(rates)
                 }
-                completion(rates)
-            }
-        }.resume()
+            })
+            task.resume()
+
+        } catch {
+            //
+        }
     }
 }
