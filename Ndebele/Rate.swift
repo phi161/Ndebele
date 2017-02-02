@@ -14,4 +14,8 @@ struct Rate {
     let buyPrice: Double
     let sellPrice: Double
     let pipMultiplier: Int
+
+    var spread: Double {
+        return (buyPrice - sellPrice) * Double(pipMultiplier)
+    }
 }
