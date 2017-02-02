@@ -39,6 +39,7 @@ final class NdebeleWebService {
                             rates.append(rate)
                         }
                     }
+                    // TODO: Handle network errors
                     completion(rates)
                 }
             })

@@ -59,6 +59,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
             if previousRates.isEmpty {
                 cell.populate(rate: rates[indexPath.row])
             } else {
+                // TODO: It will be safer to fetch the previous rate based on the currencyId instead of the indexPath
                 cell.populate(rate: rates[indexPath.row], previous: previousRates[indexPath.row])
             }
         }

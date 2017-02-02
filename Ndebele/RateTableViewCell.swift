@@ -10,6 +10,7 @@ import UIKit
 
 class RateTableViewCell: UITableViewCell {
     @IBOutlet var nameLabel: UILabel!
+    // TODO: The following pairs should be a separate UIView subclass
     @IBOutlet var buyLabel: UILabel!
     @IBOutlet var sellLabel: UILabel!
     @IBOutlet var buyLabelBackground: UIView!
