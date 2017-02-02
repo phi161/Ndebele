@@ -34,7 +34,7 @@ struct Rate {
 
         // Use NSString since it provides all the charAt related functionality
         // and we don't need String's unicode support
-        let string = String(value) as NSString
+        let string = value.fixedFraction(digits: 5) as NSString
 
         guard let integerPart = string.components(separatedBy: ".").first else {
             return NSAttributedString(string: "")

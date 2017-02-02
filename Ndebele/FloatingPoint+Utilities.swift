@@ -14,7 +14,7 @@ import Foundation
  */
 extension FloatingPoint {
     func fixedFraction(digits: Int) -> String {
-        //TODO: Better understand what are the implications of using that
+        // TODO: Better understand what are the implications of using that
         return String(format: "%.\(digits)f", self as! CVarArg)
     }
 }
