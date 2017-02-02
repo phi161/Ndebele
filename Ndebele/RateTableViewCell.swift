@@ -16,14 +16,17 @@ class RateTableViewCell: UITableViewCell {
 }
 
 extension RateTableViewCell {
-    func populate(name: String, buyPrice: Double, sellPrice: Double, spread: Double) {
+    func populate(name: String, buyPrice: Double, sellPrice: Double, spread: String) {
         nameLabel.text = name
         buyLabel.text = String(buyPrice)
         sellLabel.text = String(sellPrice)
-        spreadLabel.text = String(spread)
+        spreadLabel.text = spread
     }
 
     func populate(rate: Rate) {
-        populate(name: rate.name, buyPrice: rate.buyPrice, sellPrice: rate.sellPrice, spread: rate.spread)
+        nameLabel.text = rate.name
+        buyLabel.attributedText = rate.formattedBuyPrice
+        sellLabel.attributedText = rate.formattedSellPrice
+        spreadLabel.text = rate.spread
     }
 }
