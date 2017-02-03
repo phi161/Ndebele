@@ -8,20 +8,34 @@
 
 /* Begin PBXBuildFile section */
 		CFC69C5D1E43AEE900EEF7FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC69C5C1E43AEE900EEF7FF /* AppDelegate.swift */; };
-		CFC69C5F1E43AEE900EEF7FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC69C5E1E43AEE900EEF7FF /* ViewController.swift */; };
+		CFC69C5F1E43AEE900EEF7FF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC69C5E1E43AEE900EEF7FF /* MainViewController.swift */; };
 		CFC69C621E43AEE900EEF7FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFC69C601E43AEE900EEF7FF /* Main.storyboard */; };
 		CFC69C641E43AEE900EEF7FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFC69C631E43AEE900EEF7FF /* Assets.xcassets */; };
 		CFC69C671E43AEE900EEF7FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFC69C651E43AEE900EEF7FF /* LaunchScreen.storyboard */; };
+		CFC69C701E43B40F00EEF7FF /* RateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC69C6E1E43B40F00EEF7FF /* RateTableViewCell.swift */; };
+		CFC69C711E43B40F00EEF7FF /* RateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFC69C6F1E43B40F00EEF7FF /* RateTableViewCell.xib */; };
+		CFC69C731E43B88900EEF7FF /* Rate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC69C721E43B88900EEF7FF /* Rate.swift */; };
+		CFC69C751E43BC5E00EEF7FF /* Int+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC69C741E43BC5E00EEF7FF /* Int+Utilities.swift */; };
+		CFC69C791E43D8A600EEF7FF /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC69C781E43D8A600EEF7FF /* WebService.swift */; };
+		CFC69C7B1E43E0EE00EEF7FF /* FloatingPoint+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC69C7A1E43E0EE00EEF7FF /* FloatingPoint+Utilities.swift */; };
+		CFC69C891E44014700EEF7FF /* PollingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC69C881E44014700EEF7FF /* PollingService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CFC69C591E43AEE900EEF7FF /* Ndebele.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ndebele.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFC69C5C1E43AEE900EEF7FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CFC69C5E1E43AEE900EEF7FF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CFC69C5E1E43AEE900EEF7FF /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		CFC69C611E43AEE900EEF7FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CFC69C631E43AEE900EEF7FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CFC69C661E43AEE900EEF7FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CFC69C681E43AEE900EEF7FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFC69C6E1E43B40F00EEF7FF /* RateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateTableViewCell.swift; sourceTree = "<group>"; };
+		CFC69C6F1E43B40F00EEF7FF /* RateTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RateTableViewCell.xib; sourceTree = "<group>"; };
+		CFC69C721E43B88900EEF7FF /* Rate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rate.swift; sourceTree = "<group>"; };
+		CFC69C741E43BC5E00EEF7FF /* Int+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Utilities.swift"; sourceTree = "<group>"; };
+		CFC69C781E43D8A600EEF7FF /* WebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		CFC69C7A1E43E0EE00EEF7FF /* FloatingPoint+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FloatingPoint+Utilities.swift"; sourceTree = "<group>"; };
+		CFC69C881E44014700EEF7FF /* PollingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PollingService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +68,53 @@
 		CFC69C5B1E43AEE900EEF7FF /* Ndebele */ = {
 			isa = PBXGroup;
 			children = (
-				CFC69C5C1E43AEE900EEF7FF /* AppDelegate.swift */,
-				CFC69C5E1E43AEE900EEF7FF /* ViewController.swift */,
-				CFC69C601E43AEE900EEF7FF /* Main.storyboard */,
-				CFC69C631E43AEE900EEF7FF /* Assets.xcassets */,
-				CFC69C651E43AEE900EEF7FF /* LaunchScreen.storyboard */,
 				CFC69C681E43AEE900EEF7FF /* Info.plist */,
+				CFC69C5C1E43AEE900EEF7FF /* AppDelegate.swift */,
+				CFC69C781E43D8A600EEF7FF /* WebService.swift */,
+				CFC69C881E44014700EEF7FF /* PollingService.swift */,
+				CFC69C631E43AEE900EEF7FF /* Assets.xcassets */,
+				CFC69C871E43FC7C00EEF7FF /* Controllers */,
+				CFC69C861E43FC6B00EEF7FF /* Models */,
+				CFC69C841E43FC4000EEF7FF /* Utilities */,
+				CFC69C851E43FC5100EEF7FF /* Views */,
 			);
 			path = Ndebele;
+			sourceTree = "<group>";
+		};
+		CFC69C841E43FC4000EEF7FF /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				CFC69C741E43BC5E00EEF7FF /* Int+Utilities.swift */,
+				CFC69C7A1E43E0EE00EEF7FF /* FloatingPoint+Utilities.swift */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		CFC69C851E43FC5100EEF7FF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CFC69C6E1E43B40F00EEF7FF /* RateTableViewCell.swift */,
+				CFC69C6F1E43B40F00EEF7FF /* RateTableViewCell.xib */,
+				CFC69C651E43AEE900EEF7FF /* LaunchScreen.storyboard */,
+				CFC69C601E43AEE900EEF7FF /* Main.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		CFC69C861E43FC6B00EEF7FF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CFC69C721E43B88900EEF7FF /* Rate.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		CFC69C871E43FC7C00EEF7FF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CFC69C5E1E43AEE900EEF7FF /* MainViewController.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,6 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFC69C671E43AEE900EEF7FF /* LaunchScreen.storyboard in Resources */,
+				CFC69C711E43B40F00EEF7FF /* RateTableViewCell.xib in Resources */,
 				CFC69C641E43AEE900EEF7FF /* Assets.xcassets in Resources */,
 				CFC69C621E43AEE900EEF7FF /* Main.storyboard in Resources */,
 			);
@@ -136,8 +190,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CFC69C5F1E43AEE900EEF7FF /* ViewController.swift in Sources */,
+				CFC69C791E43D8A600EEF7FF /* WebService.swift in Sources */,
+				CFC69C5F1E43AEE900EEF7FF /* MainViewController.swift in Sources */,
+				CFC69C731E43B88900EEF7FF /* Rate.swift in Sources */,
+				CFC69C751E43BC5E00EEF7FF /* Int+Utilities.swift in Sources */,
+				CFC69C7B1E43E0EE00EEF7FF /* FloatingPoint+Utilities.swift in Sources */,
+				CFC69C891E44014700EEF7FF /* PollingService.swift in Sources */,
 				CFC69C5D1E43AEE900EEF7FF /* AppDelegate.swift in Sources */,
+				CFC69C701E43B40F00EEF7FF /* RateTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,7 +318,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Ndebele/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = phi161.Ndebele;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -270,7 +332,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Ndebele/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = phi161.Ndebele;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -297,6 +361,7 @@
 				CFC69C6D1E43AEE900EEF7FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
