@@ -13,6 +13,8 @@ final class MainViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var refreshButton: UIBarButtonItem!
     let RateTableViewCellIdentifier = "RateTableViewCellIdentifier"
+    let webService = NdebeleWebService()
+    let pollingService = PollingService()
 
     var previousRates: [Rate] = []
     var rates: [Rate] = []
@@ -25,19 +27,42 @@ final class MainViewController: UIViewController {
         self.title = NSLocalizedString("MAIN_TITLE", comment: "The title of the main view")
         tableView.rowHeight = 120.0
         tableView.register(UINib.init(nibName: "RateTableViewCell", bundle: nil), forCellReuseIdentifier: RateTableViewCellIdentifier)
+        
+        fetchRates()
+        pollingService.start()
     }
 
-    // MARK: - Actions
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
 
-    @IBAction func refreshButtonTapped(_: Any) {
-        let service = NdebeleWebService()
-        service.rates { rates in
+        NotificationCenter.default.addObserver(self, selector: #selector(handleNotification), name: pollingService.notificationName, object: nil)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self, name: pollingService.notificationName, object: nil)
+    }
+    
+    // MARK: - Logic
+    
+    func fetchRates() {
+        webService.rates { rates in
             self.previousRates = self.rates
             self.rates = rates
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
         }
+    }
+    
+    // MARK: - Actions
+
+    func handleNotification() {
+        fetchRates()
+    }
+    
+    @IBAction func refreshButtonTapped(_: Any) {
+        fetchRates()
     }
 }
 
