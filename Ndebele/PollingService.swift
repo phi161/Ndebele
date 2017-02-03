@@ -15,6 +15,20 @@ final class PollingService {
     var elapsed: TimeInterval = 0.0
     var timerStarted: Date = Date()
     
+    init() {
+        NotificationCenter.default.addObserver(self, selector: #selector(handleBackground), name: NSNotification.Name.UIApplicationDidEnterBackground, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleBackground), name: NSNotification.Name.UIApplicationWillTerminate, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleForeground), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
+    }
+
+    @objc func handleBackground() {
+        pause()
+    }
+    
+    @objc func handleForeground() {
+        start()
+    }
+    
     func start() {
         timer = Timer.scheduledTimer(timeInterval: (interval-elapsed), target: self, selector: #selector(handleTimer), userInfo: nil, repeats: false)
         timerStarted = Date()
