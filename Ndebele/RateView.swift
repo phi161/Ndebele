@@ -51,8 +51,6 @@ class RateView: UIView, NibOwnerLoadable {
             color = UIColor.lightGray
         }
 
-        UIView.animate(withDuration: 0.2) {
-            self.roundedView.backgroundColor = color
-        }
+        self.roundedView.backgroundColor = color
     }
 }
