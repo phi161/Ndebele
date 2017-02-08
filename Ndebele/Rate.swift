@@ -51,6 +51,10 @@ struct Rate {
 
         let pipPosition = (integerPart as NSString).length + zeros - 1
 
+        if string.length < pipPosition + 3 {
+            return FormattedPrice(left: "", highlighted: "", fractional: "")
+        }
+
         let trimmed = string.substring(to: pipPosition + 3) as NSString
 
         let leftRange = NSRange(location: 0, length: pipPosition)
