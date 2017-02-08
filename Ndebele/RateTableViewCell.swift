@@ -19,7 +19,7 @@ extension RateTableViewCell {
     func populate(rate: Rate) {
         nameLabel.text = rate.name
         spreadLabel.text = rate.spread
-        
+
         buyRateView.update(formattedPrice: rate.formattedBuyPrice, state: .unaffected)
         sellRateView.update(formattedPrice: rate.formattedSellPrice, state: .unaffected)
     }

@@ -12,6 +12,10 @@ struct FormattedPrice {
     let left: String
     let highlighted: String
     let fractional: String
+
+    var stringRepresentation: String {
+        return "\(left)\(highlighted)\(fractional)"
+    }
 }
 
 struct Rate {
