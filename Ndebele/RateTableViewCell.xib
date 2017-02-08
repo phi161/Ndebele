@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -17,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="321" height="142"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="321" height="142"/>
+                <rect key="frame" x="0.0" y="0.0" width="321" height="141"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="spread" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZb-5D-BQT">
@@ -32,43 +31,19 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pHZ-kW-6Ox">
-                        <rect key="frame" x="163" y="45.5" width="140" height="51"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="buy price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hBF-Fo-TfO">
-                                <rect key="frame" x="34" y="15.5" width="72" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pHZ-kW-6Ox" customClass="RateView" customModule="Ndebele" customModuleProvider="target">
+                        <rect key="frame" x="168" y="45.5" width="140" height="51"/>
                         <color key="backgroundColor" red="0.75294117650000003" green="0.87058823529999996" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="hBF-Fo-TfO" firstAttribute="centerX" secondItem="pHZ-kW-6Ox" secondAttribute="centerX" id="PrL-qh-4cX"/>
-                            <constraint firstItem="hBF-Fo-TfO" firstAttribute="centerY" secondItem="pHZ-kW-6Ox" secondAttribute="centerY" id="RwO-Ai-liM"/>
-                        </constraints>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eyR-q5-EpL">
-                        <rect key="frame" x="20" y="45.5" width="121" height="51"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sell price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="myo-yx-Mfd">
-                                <rect key="frame" x="26" y="14.5" width="69" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eyR-q5-EpL" customClass="RateView" customModule="Ndebele" customModuleProvider="target">
+                        <rect key="frame" x="13" y="45.5" width="140.5" height="51"/>
                         <color key="backgroundColor" red="0.75294117650000003" green="0.87058823529999996" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="myo-yx-Mfd" firstAttribute="centerX" secondItem="eyR-q5-EpL" secondAttribute="centerX" id="6u7-x3-5u9"/>
-                            <constraint firstItem="myo-yx-Mfd" firstAttribute="centerY" secondItem="eyR-q5-EpL" secondAttribute="centerY" id="NfE-oJ-Ufq"/>
-                        </constraints>
                     </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="TZb-5D-BQT" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="2he-JQ-nBa"/>
                     <constraint firstItem="eyR-q5-EpL" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="39u-XS-ok1"/>
-                    <constraint firstItem="eyR-q5-EpL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="12" id="8gX-BM-z19"/>
+                    <constraint firstItem="eyR-q5-EpL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="5" id="8gX-BM-z19"/>
                     <constraint firstItem="hIR-LM-DSc" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="Hau-N8-oxe"/>
                     <constraint firstItem="pHZ-kW-6Ox" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="KJs-HP-aGw"/>
                     <constraint firstItem="hIR-LM-DSc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="P4l-8I-kSd"/>
@@ -76,16 +51,14 @@
                     <constraint firstAttribute="bottomMargin" secondItem="TZb-5D-BQT" secondAttribute="bottom" id="cWQ-1G-pRc"/>
                     <constraint firstItem="pHZ-kW-6Ox" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.5" constant="-20" id="ceQ-p6-ADc"/>
                     <constraint firstItem="eyR-q5-EpL" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.5" constant="-20" id="eG9-wi-t3s"/>
-                    <constraint firstItem="eyR-q5-EpL" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.5" constant="-40" id="gYr-ZK-jUg"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="pHZ-kW-6Ox" secondAttribute="trailing" constant="10" id="jCV-VX-4sd"/>
+                    <constraint firstItem="eyR-q5-EpL" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.5" constant="-20" id="gYr-ZK-jUg"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="pHZ-kW-6Ox" secondAttribute="trailing" constant="5" id="jCV-VX-4sd"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="buyLabel" destination="hBF-Fo-TfO" id="7ZS-bV-q1U"/>
-                <outlet property="buyLabelBackground" destination="pHZ-kW-6Ox" id="zIN-0K-MqU"/>
+                <outlet property="buyRateView" destination="pHZ-kW-6Ox" id="ia4-Xh-4HW"/>
                 <outlet property="nameLabel" destination="hIR-LM-DSc" id="Sqr-Ic-iEg"/>
-                <outlet property="sellLabel" destination="myo-yx-Mfd" id="bJq-EO-FxB"/>
-                <outlet property="sellLabelBackground" destination="eyR-q5-EpL" id="1kD-YY-s20"/>
+                <outlet property="sellRateView" destination="eyR-q5-EpL" id="yhK-LK-SZW"/>
                 <outlet property="spreadLabel" destination="TZb-5D-BQT" id="xib-Kk-XCu"/>
             </connections>
             <point key="canvasLocation" x="34.5" y="38"/>
