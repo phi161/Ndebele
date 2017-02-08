@@ -19,6 +19,9 @@
 		CFC69C791E43D8A600EEF7FF /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC69C781E43D8A600EEF7FF /* WebService.swift */; };
 		CFC69C7B1E43E0EE00EEF7FF /* FloatingPoint+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC69C7A1E43E0EE00EEF7FF /* FloatingPoint+Utilities.swift */; };
 		CFC69C891E44014700EEF7FF /* PollingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC69C881E44014700EEF7FF /* PollingService.swift */; };
+		CFEE7E4C1E4B149D00A4E51E /* NibOwnerLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEE7E4B1E4B149D00A4E51E /* NibOwnerLoadable.swift */; };
+		CFEE7E4F1E4B14DF00A4E51E /* RateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEE7E4D1E4B14DF00A4E51E /* RateView.swift */; };
+		CFEE7E501E4B14DF00A4E51E /* RateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFEE7E4E1E4B14DF00A4E51E /* RateView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		CFC69C781E43D8A600EEF7FF /* WebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		CFC69C7A1E43E0EE00EEF7FF /* FloatingPoint+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FloatingPoint+Utilities.swift"; sourceTree = "<group>"; };
 		CFC69C881E44014700EEF7FF /* PollingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PollingService.swift; sourceTree = "<group>"; };
+		CFEE7E4B1E4B149D00A4E51E /* NibOwnerLoadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibOwnerLoadable.swift; sourceTree = "<group>"; };
+		CFEE7E4D1E4B14DF00A4E51E /* RateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateView.swift; sourceTree = "<group>"; };
+		CFEE7E4E1E4B14DF00A4E51E /* RateView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RateView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,8 +90,9 @@
 		CFC69C841E43FC4000EEF7FF /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				CFC69C741E43BC5E00EEF7FF /* Int+Utilities.swift */,
 				CFC69C7A1E43E0EE00EEF7FF /* FloatingPoint+Utilities.swift */,
+				CFC69C741E43BC5E00EEF7FF /* Int+Utilities.swift */,
+				CFEE7E4B1E4B149D00A4E51E /* NibOwnerLoadable.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -93,10 +100,12 @@
 		CFC69C851E43FC5100EEF7FF /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				CFC69C6E1E43B40F00EEF7FF /* RateTableViewCell.swift */,
-				CFC69C6F1E43B40F00EEF7FF /* RateTableViewCell.xib */,
 				CFC69C651E43AEE900EEF7FF /* LaunchScreen.storyboard */,
 				CFC69C601E43AEE900EEF7FF /* Main.storyboard */,
+				CFC69C6E1E43B40F00EEF7FF /* RateTableViewCell.swift */,
+				CFC69C6F1E43B40F00EEF7FF /* RateTableViewCell.xib */,
+				CFEE7E4D1E4B14DF00A4E51E /* RateView.swift */,
+				CFEE7E4E1E4B14DF00A4E51E /* RateView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -176,6 +185,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFEE7E501E4B14DF00A4E51E /* RateView.xib in Resources */,
 				CFC69C671E43AEE900EEF7FF /* LaunchScreen.storyboard in Resources */,
 				CFC69C711E43B40F00EEF7FF /* RateTableViewCell.xib in Resources */,
 				CFC69C641E43AEE900EEF7FF /* Assets.xcassets in Resources */,
@@ -191,10 +201,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFC69C791E43D8A600EEF7FF /* WebService.swift in Sources */,
+				CFEE7E4C1E4B149D00A4E51E /* NibOwnerLoadable.swift in Sources */,
 				CFC69C5F1E43AEE900EEF7FF /* MainViewController.swift in Sources */,
 				CFC69C731E43B88900EEF7FF /* Rate.swift in Sources */,
 				CFC69C751E43BC5E00EEF7FF /* Int+Utilities.swift in Sources */,
 				CFC69C7B1E43E0EE00EEF7FF /* FloatingPoint+Utilities.swift in Sources */,
+				CFEE7E4F1E4B14DF00A4E51E /* RateView.swift in Sources */,
 				CFC69C891E44014700EEF7FF /* PollingService.swift in Sources */,
 				CFC69C5D1E43AEE900EEF7FF /* AppDelegate.swift in Sources */,
 				CFC69C701E43B40F00EEF7FF /* RateTableViewCell.swift in Sources */,
