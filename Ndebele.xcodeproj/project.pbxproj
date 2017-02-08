@@ -24,6 +24,7 @@
 		CFEE7E501E4B14DF00A4E51E /* RateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFEE7E4E1E4B14DF00A4E51E /* RateView.xib */; };
 		CFEE7E601E4B21B500A4E51E /* RateModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEE7E5F1E4B21B500A4E51E /* RateModelTests.swift */; };
 		CFEE7E621E4B2D7900A4E51E /* IntUtilitiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEE7E611E4B2D7900A4E51E /* IntUtilitiesTests.swift */; };
+		CFEE7E641E4B365500A4E51E /* FloatingPointUtilitiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEE7E631E4B365500A4E51E /* FloatingPointUtilitiesTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		CFEE7E591E4B217B00A4E51E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CFEE7E5F1E4B21B500A4E51E /* RateModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateModelTests.swift; sourceTree = "<group>"; };
 		CFEE7E611E4B2D7900A4E51E /* IntUtilitiesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntUtilitiesTests.swift; sourceTree = "<group>"; };
+		CFEE7E631E4B365500A4E51E /* FloatingPointUtilitiesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingPointUtilitiesTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				CFEE7E591E4B217B00A4E51E /* Info.plist */,
+				CFEE7E631E4B365500A4E51E /* FloatingPointUtilitiesTests.swift */,
 				CFEE7E611E4B2D7900A4E51E /* IntUtilitiesTests.swift */,
 				CFEE7E5F1E4B21B500A4E51E /* RateModelTests.swift */,
 			);
@@ -285,6 +288,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFEE7E641E4B365500A4E51E /* FloatingPointUtilitiesTests.swift in Sources */,
 				CFEE7E621E4B2D7900A4E51E /* IntUtilitiesTests.swift in Sources */,
 				CFEE7E601E4B21B500A4E51E /* RateModelTests.swift in Sources */,
 			);
