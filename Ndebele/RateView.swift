@@ -39,8 +39,8 @@ class RateView: UIView, NibOwnerLoadable {
 
     // MARK: - GUI Update
 
-    func update(value: NSAttributedString, state: HistoryState) {
-        label.attributedText = value
+    func update(formattedPrice: FormattedPrice, state: HistoryState) {
+        label.text = "\(formattedPrice.left)\(formattedPrice.highlighted)\(formattedPrice.fractional)"
         let color: UIColor
         switch state {
         case .increased:
