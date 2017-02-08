@@ -95,4 +95,46 @@ class RateModelTests: XCTestCase {
 
         XCTAssertEqual(rate.spread, String(format: "%.4f", 0.0))
     }
+
+    // MARK: - Formatted Price
+
+    func testFormattedPrice() {
+        let rate = Rate(currencyId: 0, name: "TEST", buyPrice: 1.06404, sellPrice: 1.06382, pipMultiplier: 10000)
+
+        XCTAssertTrue(
+            rate.formattedBuyPrice.left == "1.06" &&
+                rate.formattedBuyPrice.highlighted == "40" &&
+                rate.formattedBuyPrice.fractional == "4"
+        )
+    }
+
+    func testFormattedPriceRounded() {
+        let rate = Rate(currencyId: 0, name: "TEST", buyPrice: 1.064049, sellPrice: 1.06382, pipMultiplier: 10000)
+
+        XCTAssertTrue(
+            rate.formattedBuyPrice.left == "1.06" &&
+                rate.formattedBuyPrice.highlighted == "40" &&
+                rate.formattedBuyPrice.fractional == "5"
+        )
+    }
+
+    func testFormattedPriceSmallerPip() {
+        let rate = Rate(currencyId: 0, name: "TEST", buyPrice: 1.06404, sellPrice: 1.06382, pipMultiplier: 1000)
+
+        XCTAssertTrue(
+            rate.formattedBuyPrice.left == "1.0" &&
+                rate.formattedBuyPrice.highlighted == "64" &&
+                rate.formattedBuyPrice.fractional == "0"
+        )
+    }
+
+    func testFormattedPriceLargePip() {
+        let rate = Rate(currencyId: 0, name: "TEST", buyPrice: 1.06404, sellPrice: 1.06382, pipMultiplier: 1_000_000)
+
+        XCTAssertTrue(
+            rate.formattedBuyPrice.left == "" &&
+                rate.formattedBuyPrice.highlighted == "" &&
+                rate.formattedBuyPrice.fractional == ""
+        )
+    }
 }
