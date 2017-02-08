@@ -10,55 +10,40 @@ import UIKit
 
 class RateTableViewCell: UITableViewCell {
     @IBOutlet var nameLabel: UILabel!
-    // TODO: The following pairs should be a separate UIView subclass
-    @IBOutlet var buyLabel: UILabel!
-    @IBOutlet var sellLabel: UILabel!
-    @IBOutlet var buyLabelBackground: UIView!
-    @IBOutlet var sellLabelBackground: UIView!
+    @IBOutlet var sellRateView: RateView!
+    @IBOutlet var buyRateView: RateView!
     @IBOutlet var spreadLabel: UILabel!
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-
-        buyLabelBackground.backgroundColor = UIColor.lightGray
-        sellLabelBackground.backgroundColor = UIColor.lightGray
-    }
 }
 
 extension RateTableViewCell {
-    func populate(name: String, buyPrice: Double, sellPrice: Double, spread: String) {
-        nameLabel.text = name
-        buyLabel.text = String(buyPrice)
-        sellLabel.text = String(sellPrice)
-        spreadLabel.text = spread
-    }
-
     func populate(rate: Rate) {
         nameLabel.text = rate.name
-        buyLabel.attributedText = rate.formattedBuyPrice
-        sellLabel.attributedText = rate.formattedSellPrice
         spreadLabel.text = rate.spread
+
+        buyRateView.update(formattedPrice: rate.formattedBuyPrice, state: .unaffected)
+        sellRateView.update(formattedPrice: rate.formattedSellPrice, state: .unaffected)
     }
 
     func populate(rate: Rate, previous previousRate: Rate) {
-        populate(rate: rate)
+        nameLabel.text = rate.name
+        spreadLabel.text = rate.spread
 
-        // Buy background
+        // Buy
         if rate.buyPrice > previousRate.buyPrice {
-            buyLabelBackground.backgroundColor = UIColor.green
+            buyRateView.update(formattedPrice: rate.formattedBuyPrice, state: .increased)
         } else if rate.buyPrice < previousRate.buyPrice {
-            buyLabelBackground.backgroundColor = UIColor.red
+            buyRateView.update(formattedPrice: rate.formattedBuyPrice, state: .decreased)
         } else {
-            buyLabelBackground.backgroundColor = UIColor.lightGray
+            buyRateView.update(formattedPrice: rate.formattedBuyPrice, state: .unaffected)
         }
 
-        // Sell background
+        // Sell
         if rate.sellPrice > previousRate.sellPrice {
-            sellLabelBackground.backgroundColor = UIColor.green
+            sellRateView.update(formattedPrice: rate.formattedSellPrice, state: .increased)
         } else if rate.sellPrice < previousRate.sellPrice {
-            sellLabelBackground.backgroundColor = UIColor.red
+            sellRateView.update(formattedPrice: rate.formattedSellPrice, state: .decreased)
         } else {
-            sellLabelBackground.backgroundColor = UIColor.lightGray
+            sellRateView.update(formattedPrice: rate.formattedSellPrice, state: .unaffected)
         }
     }
 }
