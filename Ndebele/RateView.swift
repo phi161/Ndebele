@@ -16,29 +16,29 @@ enum HistoryState {
 }
 
 class RateView: UIView, NibOwnerLoadable {
-    
+
     @IBOutlet private var label: UILabel!
     @IBOutlet private var roundedView: UIView!
-    
+
     // MARK: - Setup
-    
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         RateView.loadFromNib(owner: self)
     }
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         roundedView.backgroundColor = UIColor.lightGray
         roundedView.layer.cornerRadius = 5.0
     }
-    
+
     // MARK: - GUI Update
-    
+
     func update(value: NSAttributedString, state: HistoryState) {
         label.attributedText = value
         let color: UIColor
@@ -50,7 +50,7 @@ class RateView: UIView, NibOwnerLoadable {
         case .unaffected:
             color = UIColor.lightGray
         }
-        
+
         UIView.animate(withDuration: 0.2) {
             self.roundedView.backgroundColor = color
         }

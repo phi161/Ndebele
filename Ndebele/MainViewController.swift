@@ -27,7 +27,7 @@ final class MainViewController: UIViewController {
         self.title = NSLocalizedString("MAIN_TITLE", comment: "The title of the main view")
         tableView.rowHeight = 120.0
         tableView.register(UINib.init(nibName: "RateTableViewCell", bundle: nil), forCellReuseIdentifier: RateTableViewCellIdentifier)
-        
+
         fetchRates()
         pollingService.start()
     }
@@ -42,9 +42,9 @@ final class MainViewController: UIViewController {
         super.viewWillDisappear(animated)
         NotificationCenter.default.removeObserver(self, name: pollingService.notificationName, object: nil)
     }
-    
+
     // MARK: - Logic
-    
+
     func fetchRates() {
         webService.rates { rates in
             self.previousRates = self.rates
@@ -54,13 +54,13 @@ final class MainViewController: UIViewController {
             }
         }
     }
-    
+
     // MARK: - Actions
 
     func handleNotification() {
         fetchRates()
     }
-    
+
     @IBAction func refreshButtonTapped(_: Any) {
         fetchRates()
     }
