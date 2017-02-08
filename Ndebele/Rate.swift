@@ -7,7 +7,16 @@
 //
 
 import Foundation
-import UIKit
+
+struct FormattedPrice {
+    let left: String
+    let highlighted: String
+    let fractional: String
+
+    var stringRepresentation: String {
+        return "\(left)\(highlighted)\(fractional)"
+    }
+}
 
 struct Rate {
     let currencyId: Int
@@ -20,41 +29,42 @@ struct Rate {
         return String(format: "%.4f", (buyPrice - sellPrice) * Double(pipMultiplier))
     }
 
-    var formattedBuyPrice: NSAttributedString {
+    var formattedBuyPrice: FormattedPrice {
         return formattedPrice(value: buyPrice)
     }
 
-    var formattedSellPrice: NSAttributedString {
+    var formattedSellPrice: FormattedPrice {
         return formattedPrice(value: sellPrice)
     }
 
-    func formattedPrice(value: Double) -> NSAttributedString {
+    func formattedPrice(value: Double) -> FormattedPrice {
         // Find the pip location in the decimal part
         let zeros = pipMultiplier.numberOfTrailingZeros()
 
         // Use NSString since it provides all the charAt related functionality
         // and we don't need String's unicode support
-        let string = value.fixedFraction(digits: 5) as NSString
+        let string = value.fixedFraction(digits: 5) as NSString // We have 5 decimal digits or less
 
         guard let integerPart = string.components(separatedBy: ".").first else {
-            return NSAttributedString(string: "")
+            return FormattedPrice(left: "", highlighted: "", fractional: "")
         }
 
         let pipPosition = (integerPart as NSString).length + zeros - 1
 
-        let trimmed = string.substring(to: pipPosition + 3)
+        if string.length < pipPosition + 3 {
+            return FormattedPrice(left: "", highlighted: "", fractional: "")
+        }
+
+        let trimmed = string.substring(to: pipPosition + 3) as NSString
 
         let leftRange = NSRange(location: 0, length: pipPosition)
         let highlightedRange = NSRange(location: pipPosition, length: 2)
         let fractionalPipRange = NSRange(location: pipPosition + 2, length: 1)
 
-        let mutableAttributedString = NSMutableAttributedString(string: trimmed, attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 20)])
-
-        mutableAttributedString.setAttributes([NSFontAttributeName: UIFont.systemFont(ofSize: 20), NSForegroundColorAttributeName: UIColor.darkGray], range: leftRange)
-        mutableAttributedString.setAttributes([NSFontAttributeName: UIFont.boldSystemFont(ofSize: 24), NSForegroundColorAttributeName: UIColor.black], range: highlightedRange)
-        mutableAttributedString.setAttributes([NSFontAttributeName: UIFont.systemFont(ofSize: 18), NSForegroundColorAttributeName: UIColor.darkGray], range: fractionalPipRange)
-
-        return mutableAttributedString
+        return FormattedPrice(left: trimmed.substring(with: leftRange),
+                              highlighted: trimmed.substring(with: highlightedRange),
+                              fractional: trimmed.substring(with: fractionalPipRange)
+        )
     }
 }
 

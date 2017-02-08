@@ -39,8 +39,24 @@ class RateView: UIView, NibOwnerLoadable {
 
     // MARK: - GUI Update
 
-    func update(value: NSAttributedString, state: HistoryState) {
-        label.attributedText = value
+    func update(formattedPrice: FormattedPrice, state: HistoryState) {
+
+        let mutableAttributedString = NSMutableAttributedString(string: formattedPrice.stringRepresentation, attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 20)])
+
+        let leftLength = formattedPrice.left.characters.count
+        let highlightedLength = formattedPrice.highlighted.characters.count
+        let fractonalPipLength = formattedPrice.fractional.characters.count
+
+        let leftRange = NSRange(location: 0, length: leftLength)
+        let highlightedRange = NSRange(location: leftLength, length: highlightedLength)
+        let fractionalPipRange = NSRange(location: leftLength + highlightedLength, length: fractonalPipLength)
+
+        mutableAttributedString.setAttributes([NSFontAttributeName: UIFont.systemFont(ofSize: 22), NSForegroundColorAttributeName: UIColor.darkGray], range: leftRange)
+        mutableAttributedString.setAttributes([NSFontAttributeName: UIFont.boldSystemFont(ofSize: 26), NSForegroundColorAttributeName: UIColor.black], range: highlightedRange)
+        mutableAttributedString.setAttributes([NSFontAttributeName: UIFont.systemFont(ofSize: 18), NSForegroundColorAttributeName: UIColor.gray], range: fractionalPipRange)
+
+        label.attributedText = mutableAttributedString
+
         let color: UIColor
         switch state {
         case .increased:

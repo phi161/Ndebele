@@ -20,8 +20,8 @@ extension RateTableViewCell {
         nameLabel.text = rate.name
         spreadLabel.text = rate.spread
 
-        buyRateView.update(value: rate.formattedBuyPrice, state: .unaffected)
-        sellRateView.update(value: rate.formattedSellPrice, state: .unaffected)
+        buyRateView.update(formattedPrice: rate.formattedBuyPrice, state: .unaffected)
+        sellRateView.update(formattedPrice: rate.formattedSellPrice, state: .unaffected)
     }
 
     func populate(rate: Rate, previous previousRate: Rate) {
@@ -30,20 +30,20 @@ extension RateTableViewCell {
 
         // Buy
         if rate.buyPrice > previousRate.buyPrice {
-            buyRateView.update(value: rate.formattedBuyPrice, state: .increased)
+            buyRateView.update(formattedPrice: rate.formattedBuyPrice, state: .increased)
         } else if rate.buyPrice < previousRate.buyPrice {
-            buyRateView.update(value: rate.formattedBuyPrice, state: .decreased)
+            buyRateView.update(formattedPrice: rate.formattedBuyPrice, state: .decreased)
         } else {
-            buyRateView.update(value: rate.formattedBuyPrice, state: .unaffected)
+            buyRateView.update(formattedPrice: rate.formattedBuyPrice, state: .unaffected)
         }
 
         // Sell
         if rate.sellPrice > previousRate.sellPrice {
-            sellRateView.update(value: rate.formattedSellPrice, state: .increased)
+            sellRateView.update(formattedPrice: rate.formattedSellPrice, state: .increased)
         } else if rate.sellPrice < previousRate.sellPrice {
-            sellRateView.update(value: rate.formattedSellPrice, state: .decreased)
+            sellRateView.update(formattedPrice: rate.formattedSellPrice, state: .decreased)
         } else {
-            sellRateView.update(value: rate.formattedSellPrice, state: .unaffected)
+            sellRateView.update(formattedPrice: rate.formattedSellPrice, state: .unaffected)
         }
     }
 }

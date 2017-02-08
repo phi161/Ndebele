@@ -22,7 +22,20 @@
 		CFEE7E4C1E4B149D00A4E51E /* NibOwnerLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEE7E4B1E4B149D00A4E51E /* NibOwnerLoadable.swift */; };
 		CFEE7E4F1E4B14DF00A4E51E /* RateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEE7E4D1E4B14DF00A4E51E /* RateView.swift */; };
 		CFEE7E501E4B14DF00A4E51E /* RateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFEE7E4E1E4B14DF00A4E51E /* RateView.xib */; };
+		CFEE7E601E4B21B500A4E51E /* RateModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEE7E5F1E4B21B500A4E51E /* RateModelTests.swift */; };
+		CFEE7E621E4B2D7900A4E51E /* IntUtilitiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEE7E611E4B2D7900A4E51E /* IntUtilitiesTests.swift */; };
+		CFEE7E641E4B365500A4E51E /* FloatingPointUtilitiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEE7E631E4B365500A4E51E /* FloatingPointUtilitiesTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CFEE7E5A1E4B217B00A4E51E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFC69C511E43AEE900EEF7FF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CFC69C581E43AEE900EEF7FF;
+			remoteInfo = Ndebele;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		CFC69C591E43AEE900EEF7FF /* Ndebele.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ndebele.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,10 +55,22 @@
 		CFEE7E4B1E4B149D00A4E51E /* NibOwnerLoadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibOwnerLoadable.swift; sourceTree = "<group>"; };
 		CFEE7E4D1E4B14DF00A4E51E /* RateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateView.swift; sourceTree = "<group>"; };
 		CFEE7E4E1E4B14DF00A4E51E /* RateView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RateView.xib; sourceTree = "<group>"; };
+		CFEE7E551E4B217A00A4E51E /* NdebeleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NdebeleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFEE7E591E4B217B00A4E51E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFEE7E5F1E4B21B500A4E51E /* RateModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateModelTests.swift; sourceTree = "<group>"; };
+		CFEE7E611E4B2D7900A4E51E /* IntUtilitiesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntUtilitiesTests.swift; sourceTree = "<group>"; };
+		CFEE7E631E4B365500A4E51E /* FloatingPointUtilitiesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingPointUtilitiesTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		CFC69C561E43AEE900EEF7FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFEE7E521E4B217A00A4E51E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -59,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				CFC69C5B1E43AEE900EEF7FF /* Ndebele */,
+				CFEE7E561E4B217B00A4E51E /* NdebeleTests */,
 				CFC69C5A1E43AEE900EEF7FF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -67,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				CFC69C591E43AEE900EEF7FF /* Ndebele.app */,
+				CFEE7E551E4B217A00A4E51E /* NdebeleTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -126,6 +153,17 @@
 			name = Controllers;
 			sourceTree = "<group>";
 		};
+		CFEE7E561E4B217B00A4E51E /* NdebeleTests */ = {
+			isa = PBXGroup;
+			children = (
+				CFEE7E591E4B217B00A4E51E /* Info.plist */,
+				CFEE7E631E4B365500A4E51E /* FloatingPointUtilitiesTests.swift */,
+				CFEE7E611E4B2D7900A4E51E /* IntUtilitiesTests.swift */,
+				CFEE7E5F1E4B21B500A4E51E /* RateModelTests.swift */,
+			);
+			path = NdebeleTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,6 +184,24 @@
 			productReference = CFC69C591E43AEE900EEF7FF /* Ndebele.app */;
 			productType = "com.apple.product-type.application";
 		};
+		CFEE7E541E4B217A00A4E51E /* NdebeleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CFEE7E5E1E4B217B00A4E51E /* Build configuration list for PBXNativeTarget "NdebeleTests" */;
+			buildPhases = (
+				CFEE7E511E4B217A00A4E51E /* Sources */,
+				CFEE7E521E4B217A00A4E51E /* Frameworks */,
+				CFEE7E531E4B217A00A4E51E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CFEE7E5B1E4B217B00A4E51E /* PBXTargetDependency */,
+			);
+			name = NdebeleTests;
+			productName = NdebeleTests;
+			productReference = CFEE7E551E4B217A00A4E51E /* NdebeleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -158,7 +214,14 @@
 				TargetAttributes = {
 					CFC69C581E43AEE900EEF7FF = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = WFU5WSAQXA;
 						ProvisioningStyle = Automatic;
+					};
+					CFEE7E541E4B217A00A4E51E = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = WFU5WSAQXA;
+						ProvisioningStyle = Automatic;
+						TestTargetID = CFC69C581E43AEE900EEF7FF;
 					};
 				};
 			};
@@ -176,6 +239,7 @@
 			projectRoot = "";
 			targets = (
 				CFC69C581E43AEE900EEF7FF /* Ndebele */,
+				CFEE7E541E4B217A00A4E51E /* NdebeleTests */,
 			);
 		};
 /* End PBXProject section */
@@ -190,6 +254,13 @@
 				CFC69C711E43B40F00EEF7FF /* RateTableViewCell.xib in Resources */,
 				CFC69C641E43AEE900EEF7FF /* Assets.xcassets in Resources */,
 				CFC69C621E43AEE900EEF7FF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFEE7E531E4B217A00A4E51E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,7 +284,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CFEE7E511E4B217A00A4E51E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFEE7E641E4B365500A4E51E /* FloatingPointUtilitiesTests.swift in Sources */,
+				CFEE7E621E4B2D7900A4E51E /* IntUtilitiesTests.swift in Sources */,
+				CFEE7E601E4B21B500A4E51E /* RateModelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CFEE7E5B1E4B217B00A4E51E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CFC69C581E43AEE900EEF7FF /* Ndebele */;
+			targetProxy = CFEE7E5A1E4B217B00A4E51E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		CFC69C601E43AEE900EEF7FF /* Main.storyboard */ = {
@@ -330,7 +419,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = WFU5WSAQXA;
 				INFOPLIST_FILE = Ndebele/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -344,13 +433,41 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = WFU5WSAQXA;
 				INFOPLIST_FILE = Ndebele/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = phi161.Ndebele;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		CFEE7E5C1E4B217B00A4E51E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = WFU5WSAQXA;
+				INFOPLIST_FILE = NdebeleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = phi161.NdebeleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ndebele.app/Ndebele";
+			};
+			name = Debug;
+		};
+		CFEE7E5D1E4B217B00A4E51E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = WFU5WSAQXA;
+				INFOPLIST_FILE = NdebeleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = phi161.NdebeleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ndebele.app/Ndebele";
 			};
 			name = Release;
 		};
@@ -374,6 +491,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		CFEE7E5E1E4B217B00A4E51E /* Build configuration list for PBXNativeTarget "NdebeleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFEE7E5C1E4B217B00A4E51E /* Debug */,
+				CFEE7E5D1E4B217B00A4E51E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
